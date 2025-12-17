@@ -4,7 +4,8 @@ export function processData(response) {
     tempmax: response.days[0].tempmax,
     tempmin: response.days[0].tempmin,
     feelslike: response.currentConditions.feelslike,
-    conditions: response.currentConditions.conditions
+    conditions: response.currentConditions.conditions,
+    icon: response.currentConditions.icon
   };
   return data;
 }
