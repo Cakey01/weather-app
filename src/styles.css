@@ -1,0 +1,207 @@
+/* resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input, button {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/* body */
+body {
+  background-color: rgb(5, 7, 30);
+  padding: 50px 100px 50px 100px;
+  height: 100vh;
+}
+
+/* header */
+header {
+  display: flex;
+  gap: 280px;
+  color: aliceblue;
+}
+
+/* main */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  gap: 30px;
+  height: 100%;
+  width: 100%;
+}
+
+
+/* location */
+#location-div {
+  border: 1px solid aliceblue;
+  border-radius: 10px;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 10px 10px;
+  grid-area: 1 / 1 / 2 / 2;
+  background-color: aliceblue;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+input, button {
+  height: 24px;
+  border: 1px solid rgb(5, 7, 30);
+  border-radius: 5px;
+  color: aliceblue;
+  background-color: rgb(5, 7, 30);
+}
+
+/* now */
+#now {
+  border: 1px solid aliceblue;
+  background-color: aliceblue;
+  border-radius: 10px;
+  grid-area: 1 / 2 / 2 / 3;
+  padding: 3px 10px 10px 10px;
+  display: grid;
+  grid-template-columns: 64px 64px 1fr;
+  grid-template-rows: 30px 1fr;
+  width: fit-content;
+  justify-items: start;
+  align-items: center;
+  gap: 0 10px;
+  height: fit-content;
+}
+
+#condition {
+  height: 30px;
+  grid-area: 1 / 1 / 2 / 4;
+  border-bottom: 1px solid rgb(5, 7, 30);
+}
+
+#icon {
+  height: 64px;
+  width: 64px;
+  border: 1px solid black;
+  grid-area: 2 / 1 / 3 / 2 ;
+}
+
+#temp {
+  font-size: 55px;
+  place-self: center;
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+#conditions {
+  align-self: center;
+  grid-area: 2 / 3 / 3 / 4;
+}
+
+/* today */
+#today {
+  border: 1px solid aliceblue;
+  border-radius: 10px;
+  background-color: aliceblue;
+  height: fit-content;
+  padding: 10px 20px 20px 20px;
+  grid-area: 2 / 1 / 3 / 3
+}
+
+#today > h2 {
+  color: black;
+  width: fit-content;
+  height: 32px;
+  border-bottom: 1px solid rgb(5, 7, 30);
+
+}
+
+#hourly-conditions {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 0 20px;
+}
+
+.hour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hourly-icon {
+  height: 32px;
+  width: 32px;
+  border: 1px solid black;
+}
+
+/* week */ 
+#week {
+  border: 1px solid aliceblue;
+  border-radius: 10px;
+  grid-area: 1 / 3 / 3 / 4;
+  height: fit-content;
+  background-color: aliceblue;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.day {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.day-border {
+  background-color: rgb(5, 7, 30);
+  height: 1px;
+  margin: 30px 0 30px 0;
+  opacity: 0.5;
+}
+
+.day-icon {
+  border: 1px solid black;
+  height: 24px;
+  width: 24px;
+  margin-left: 30px;
+}
+
+.day-high {
+  margin-left: auto;
+  margin-right: 10px;
+}

@@ -6,9 +6,133 @@
   <title>Weather</title>
 </head>
 <body>
-  <form>
-    <input type="text" id="location" value="location" required>
-    <button>Submit</button>
-  </form>
+  <header>
+    <h1>Weather Forecast</h1>
+    <h1>Wednesday 10:00 am</h1>
+  </header>
+  <main>
+    <div id="location-div">
+      <form>
+        <label for="location">Location: </label>
+        <input type="text" id="location" value="Enter city name" required>
+        <button>Submit</button>
+      </form>
+    </div>
+    <div id="now">
+      <h2 id="condition">Rain</h2>
+      <div id="icon"></div>
+      <h1 id="temp">50</h1>
+      <div id="conditions">
+        <h5>Feels like: <span class="condition-desc">blahblah</span></h5>
+        <h5>Precipitation: <span class="condition-desc">blahblah</span></h5>
+        <h5>Wind: <span class="condition-desc">blahblah</span></h5>
+      </div>
+    </div>
+    <div id="today">
+      <h2>Hourly</h2>
+      <div id="hourly-conditions">
+        <div class="hour">
+          <h5 class="time">Now</h5>
+          <div class="hourly-icon"></div>
+          <h4 class="hourly-temp">50</h4>
+        </div>
+        <div class="hour">
+          <h5 class="time">Now</h5>
+          <div class="hourly-icon"></div>
+          <h4 class="hourly-temp">50</h4>
+        </div>
+        <div class="hour">
+          <h5 class="time">Now</h5>
+          <div class="hourly-icon"></div>
+          <h4 class="hourly-temp">50</h4>
+        </div>
+        <div class="hour">
+          <h5 class="time">Now</h5>
+          <div class="hourly-icon"></div>
+          <h4 class="hourly-temp">50</h4>
+        </div>
+        <div class="hour">
+          <h5 class="time">Now</h5>
+          <div class="hourly-icon"></div>
+          <h4 class="hourly-temp">50</h4>
+        </div>
+        <div class="hour">
+          <h5 class="time">Now</h5>
+          <div class="hourly-icon"></div>
+          <h4 class="hourly-temp">50</h4>
+        </div>
+        <div class="hour">
+          <h5 class="time">Now</h5>
+          <div class="hourly-icon"></div>
+          <h4 class="hourly-temp">50</h4>
+        </div>
+      </div>
+    </div>
+    <div id="week">
+      <div class="day">
+        <h3>Day</h4>
+        <div class="day-icon"></div>
+        <h2 class="day-cond">Cloudy</h3>
+        <h2 class="day-high">50</h3>
+        <h2 class="day-low">40</h3>
+      </div>
+      <div class="day-border"></div>
+      <div class="day">
+        <h4>Day</h4>
+        <div class="day-icon"></div>
+        <h3 class="day-cond">Cloudy</h3>
+        <h3 class="day-high">50</h3>
+        <h3 class="day-low">40</h3>
+      </div>
+      <div class="day-border"></div>
+      <div class="day">
+        <h4>Day</h4>
+        <div class="day-icon"></div>
+        <h3 class="day-cond">Cloudy</h3>
+        <h3 class="day-high">50</h3>
+        <h3 class="day-low">40</h3>
+      </div>
+      <div class="day-border"></div>
+      <div class="day">
+        <h4>Day</h4>
+        <div class="day-icon"></div>
+        <h3 class="day-cond">Cloudy</h3>
+        <h3 class="day-high">High: <span class=day-high-num>50</span></h3>
+        <h3 class="day-low">Low: <span class=day-low-num>40</span></h3>
+      </div>
+      <div class="day-border"></div>
+      <div class="day">
+        <h4>Day</h4>
+        <div class="day-icon"></div>
+        <h3 class="day-cond">Cloudy</h3>
+        <h3 class="day-high">50</h3>
+        <h3 class="day-low">40</h3>
+      </div>
+      <div class="day-border"></div>
+      <div class="day">
+        <h4>Day</h4>
+        <div class="day-icon"></div>
+        <h3 class="day-cond">Cloudy</h3>
+        <h3 class="day-high">50</h3>
+        <h3 class="day-low">40</h3>
+      </div>
+      <div class="day-border"></div>
+      <div class="day">
+        <h4>Day</h4>
+        <div class="day-icon"></div>
+        <h3 class="day-cond">Cloudy</h3>
+        <h3 class="day-high">50</h3>
+        <h3 class="day-low">40</h3>
+      </div>
+      <div class="day-border"></div>
+      <div class="day">
+        <h4>Day</h4>
+        <div class="day-icon"></div>
+        <h3 class="day-cond">Cloudy</h3>
+        <h3 class="day-high">50</h3>
+        <h3 class="day-low">40</h3>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
