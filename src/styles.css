@@ -144,7 +144,7 @@ input, button {
   grid-area: 2 / 1 / 3 / 3
 }
 
-#today > h2 {
+#today-header {
   color: black;
   width: fit-content;
   height: 32px;
@@ -152,7 +152,7 @@ input, button {
 
 }
 
-#hourly-conditions {
+#hourly-container {
   display: flex;
   justify-content: space-between;
   padding: 20px 20px 0 20px;
