@@ -1,11 +1,36 @@
 export function processData(response) {
   const data = {
-    temp: response.currentConditions.temp,
-    tempmax: response.days[0].tempmax,
-    tempmin: response.days[0].tempmin,
-    feelslike: response.currentConditions.feelslike,
-    conditions: response.currentConditions.conditions,
-    icon: response.currentConditions.icon
+    current: {
+      conditions: response.currentConditions.conditions,
+      icon: response.currentConditions.icon,
+      temp: response.currentConditions.temp,
+      feelsLike: response.currentConditions.feelslike,
+      precip: response.currentConditions.precipprob,
+      wind: response.currentConditions.windspeed,
+      humidity: response.currentConditions.humidity,
+      uv: response.currentConditions.uvindex,
+    },
+    hourly: {
+      today: response.days[0].hours.map((hour) => ({
+        time: hour.datetime,
+        icon: hour.icon,
+        temp: hour.temp,
+        conditions: hour.conditions,
+      })),
+      tomorrow: response.days[1].hours.map((hour) => ({
+        time: hour.datetime,
+        icon: hour.icon,
+        temp: hour.temp,
+        conditions: hour.conditions,
+      })),
+    },
+    week: response.days.map((day) => ({
+      day: day.datetime,
+      tempmax: day.tempmax,
+      tempmin: day.tempmin,
+      conditions: day.conditions,
+      icon: day.icon,
+    })),
   };
   return data;
 }
