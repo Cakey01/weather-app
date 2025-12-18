@@ -100,7 +100,7 @@ input, button {
   grid-area: 1 / 2 / 2 / 3;
   padding: 3px 10px 10px 10px;
   display: grid;
-  grid-template-columns: 64px 64px 1fr;
+  grid-template-columns: 64px fit-content 1fr;
   grid-template-rows: 30px 1fr;
   width: fit-content;
   justify-items: start;
@@ -109,10 +109,11 @@ input, button {
   height: fit-content;
 }
 
-#current-condition {
+#current-conditions {
   height: 30px;
   grid-area: 1 / 1 / 2 / 4;
   border-bottom: 1px solid rgb(5, 7, 30);
+  
 }
 
 #current-icon {
