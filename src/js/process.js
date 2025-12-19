@@ -24,7 +24,7 @@ export function processData(response) {
         conditions: hour.conditions,
       })),
     },
-    week: response.days.map((day) => ({
+    week: response.days.slice(0, 8).map((day) => ({
       day: day.datetime,
       tempmax: day.tempmax,
       tempmin: day.tempmin,
