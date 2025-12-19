@@ -2,6 +2,32 @@ import { parse, format } from 'date-fns';
 
 const main = document.querySelector('main');
 
+async function clear() {
+  main.innerHTML = '';
+
+  const locationDiv = document.createElement('div');
+  locationDiv.id = 'location-div';
+
+  const form = document.createElement('form');
+
+  const label = document.createElement('label');
+  label.setAttribute('for', 'location');
+  label.textContent = 'Location: ';
+
+  const input = document.createElement('input');
+  input.setAttribute('type', 'text');
+  input.id = 'location';
+  input.setAttribute('value', 'Enter city name');
+  input.required = true;
+
+  const button = document.createElement('button');
+  button.textContent = 'Submit';
+
+  form.append(label, input, button);
+  locationDiv.appendChild(form);
+  main.appendChild(locationDiv);
+}
+
 async function getIcon(name) {
   const icon = await import(`../icons/${name}.png`);
   return icon.default;
@@ -156,6 +182,7 @@ async function displayWeek(week) {
 }
 
 export async function displayWeather(data) {
+  await clear();
   await displayCurrent(data.current);
   await displayHourly(data.hourly);
   await displayWeek(data.week);
