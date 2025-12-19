@@ -2,7 +2,7 @@ import { parse, format } from 'date-fns';
 
 const main = document.querySelector('main');
 
-async function clear() {
+function clear(onSubmit) {
   main.innerHTML = '';
 
   const locationDiv = document.createElement('div');
@@ -17,13 +17,34 @@ async function clear() {
   const input = document.createElement('input');
   input.setAttribute('type', 'text');
   input.id = 'location';
-  input.setAttribute('value', 'Enter city name');
   input.required = true;
+
+  const selectLabel = document.createElement('label');
+  selectLabel.setAttribute('for', 'units');
+
+  const select = document.createElement('select');
+  select.setAttribute('name', 'units');
+  select.id = 'units';
+  const f = document.createElement('option');
+  f.value = 'us';
+  f.selected = true;
+  f.textContent = 'F°';
+  const c = document.createElement('option');
+  c.value = 'uk';
+  c.textContent = 'C°';
+  select.append(f, c);
 
   const button = document.createElement('button');
   button.textContent = 'Submit';
 
-  form.append(label, input, button);
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const location = input.value;
+    const unit = select.value;
+    await onSubmit(location, unit);
+  });
+
+  form.append(label, input, selectLabel, select, button);
   locationDiv.appendChild(form);
   main.appendChild(locationDiv);
 }
@@ -181,8 +202,8 @@ async function displayWeek(week) {
   main.appendChild(container);
 }
 
-export async function displayWeather(data) {
-  await clear();
+export async function displayWeather(data, onSubmit) {
+  clear(onSubmit);
   await displayCurrent(data.current);
   await displayHourly(data.hourly);
   await displayWeek(data.week);
