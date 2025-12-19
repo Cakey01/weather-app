@@ -47,14 +47,13 @@ body {
 /* header */
 header {
   display: flex;
-  gap: 280px;
   color: aliceblue;
 }
 
 /* main */
 main {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1.5fr;
   grid-template-rows: 1fr 2fr;
   gap: 30px;
   height: 100%;
@@ -84,7 +83,7 @@ label {
   font-weight: 600;
 }
 
-input, button {
+input, select, button {
   height: 24px;
   border: 1px solid rgb(5, 7, 30);
   border-radius: 5px;
@@ -202,7 +201,7 @@ input, button {
   margin-left: 30px;
 }
 
-.day-high {
+.day-low {
   margin-left: auto;
   margin-right: 10px;
 }
