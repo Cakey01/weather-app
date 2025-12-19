@@ -112,7 +112,51 @@ async function displayHourly(hourly) {
   main.appendChild(container);
 }
 
+async function displayWeek(week) {
+  const container = document.createElement('div');
+  container.id = 'week';
+
+  for (const [index, day] of week.entries()) {
+    const dayDiv = document.createElement('div');
+    dayDiv.classList.add('day');
+
+    const header = document.createElement('h2');
+    header.classList.add('day-header');
+    const parsedDate = parse(day.day, 'yyyy-MM-dd', new Date());
+    const formattedDate = format(parsedDate, 'eee');
+    header.textContent = formattedDate;
+
+    const icon = document.createElement('img');
+    icon.classList.add('day-icon');
+    icon.src = await getIcon(day.icon);
+    icon.alt = day.conditions;
+
+    const conditions = document.createElement('h2');
+    conditions.classList.add('day-cond');
+    conditions.textContent = day.conditions;
+
+    const low = document.createElement('h2');
+    low.classList.add('day-low');
+    low.textContent = `Low: ${day.tempmin}°`;
+
+    const high = document.createElement('h2');
+    high.classList.add('day-high');
+    high.textContent = `High: ${day.tempmax}°`;
+
+    dayDiv.append(header, icon, conditions, low, high);
+    container.appendChild(dayDiv);
+
+    if (index !== week.length - 1) {
+      const border = document.createElement('div');
+      border.classList.add('day-border');
+      container.appendChild(border);
+    }
+  }
+  main.appendChild(container);
+}
+
 export async function displayWeather(data) {
   await displayCurrent(data.current);
   await displayHourly(data.hourly);
+  await displayWeek(data.week);
 }
