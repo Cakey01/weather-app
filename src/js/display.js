@@ -81,12 +81,13 @@ async function displayHourly(hourly) {
   const hourlyContainer = document.createElement('div');
   hourlyContainer.id = 'hourly-container';
   
-  hours.forEach(async (hour, index) => {
+  for (const [index, hour] of hours.entries()) {
     const hourDiv = document.createElement('div');
     hourDiv.classList.add('hour');
 
     const time = document.createElement('h5');
     time.classList.add('time');
+
     if (index === 0) {
       time.textContent = 'Now';
     } else {
@@ -106,9 +107,9 @@ async function displayHourly(hourly) {
 
     hourDiv.append(time, icon, temp);
     hourlyContainer.appendChild(hourDiv);
-    container.appendChild(hourlyContainer);
-  });
-  main.appendChild(container)
+  };
+  container.appendChild(hourlyContainer);
+  main.appendChild(container);
 }
 
 export async function displayWeather(data) {
