@@ -7,7 +7,6 @@ import '../styles.css';
 async function handleSubmit(location, unit) {
   const response = await getData(location, unit);
   const data = processData(response);
-  console.log(data)
   await displayWeather(data, handleSubmit);
 }
 
